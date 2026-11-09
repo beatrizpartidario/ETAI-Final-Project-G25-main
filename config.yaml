@@ -1,0 +1,28 @@
+project:
+  name: ETAI 2026-27 — Everything & Then Some
+  seed: 42
+
+data:
+  train: data/raw/train.csv
+  test: data/raw/test.csv
+  customers: data/raw/clientes.csv
+  sample_submission: data/raw/sample_submission.csv
+
+columns:
+  row_id: ID
+  customer_id: customer_id
+  date: purchase_date
+  classification_target: repeat_purchase_90d
+  regression_target: spend_next_90d
+
+validation:
+  # Proposal only. Validate choices before implementation.
+  strategy: purged_expanding_window
+  horizon_days: 90
+  n_splits: 5
+  holdout_start: '2024-01-01'
+  holdout_end: '2025-02-15'
+  random_seed: 42
+
+outputs:
+  audit_summary: outputs/audit_summary.json
