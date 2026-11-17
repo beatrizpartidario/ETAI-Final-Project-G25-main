@@ -17,7 +17,12 @@ NONNEGATIVE_FEATURES = (
     "customer_tenure_days",
     "prior_mean_gap_days",
     "prior_std_gap_days",
+    "prior_mean_purchase_value",
     "prior_std_purchase_value",
+    "spend_30d",
+    "spend_90d",
+    "spend_180d",
+    "spend_365d",
 )
 
 # Historical purchase counts: nonnegative whole numbers.
